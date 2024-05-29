@@ -3,4 +3,4 @@ oops concept in javascript
 
 
 
-Explanation has been [rovide in the file itself.
+Explanation has been provided in the file itself.
