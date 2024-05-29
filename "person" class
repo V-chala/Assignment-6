@@ -69,3 +69,11 @@ console.log(person1.getDetails());
 
 console.log(Person.isValidEmail(person1.email)); // Output: true
 console.log(Person.isValidEmail('invalid-email')); // Output: false
+
+
+
+
+// Explanation:
+// The Person class includes setter methods (setFirstName, setLastName, setAge, setGender, setEmail) to modify the properties of a Person object.
+// A static method isValidEmail is added to validate email addresses using a regular expression. This method can be called on the class itself, not on an instance.
+// The example usage demonstrates how to create a Person object, update its properties, and validate an email address.
