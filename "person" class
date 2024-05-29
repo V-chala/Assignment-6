@@ -1,0 +1,71 @@
+# 1. Write a "person" class to hold all the details using oops in javascript 
+
+
+
+class Person {
+    constructor(firstName, lastName, age, gender, email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.gender = gender;
+        this.email = email;
+    }
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    getDetails() {
+        return `Name: ${this.getFullName()}
+Age: ${this.age}
+Gender: ${this.gender}
+Email: ${this.email}`;
+    }
+
+    setFirstName(firstName) {
+        this.firstName = firstName;
+    }
+
+    setLastName(lastName) {
+        this.lastName = lastName;
+    }
+
+    setAge(age) {
+        this.age = age;
+    }
+
+    setGender(gender) {
+        this.gender = gender;
+    }
+
+    setEmail(email) {
+        this.email = email;
+    }
+
+    static isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+}
+
+
+
+
+
+// Example usage:
+
+const person1 = new Person('John', 'Doe', 30, 'Male', 'john.doe@example.com');
+console.log(person1.getFullName()); // Output: John Doe
+console.log(person1.getDetails());
+
+person1.setFirstName('Jane');
+person1.setLastName('Smith');
+person1.setAge(28);
+person1.setGender('Female');
+person1.setEmail('jane.smith@example.com');
+
+console.log(person1.getFullName()); // Output: Jane Smith
+console.log(person1.getDetails());
+
+console.log(Person.isValidEmail(person1.email)); // Output: true
+console.log(Person.isValidEmail('invalid-email')); // Output: false
