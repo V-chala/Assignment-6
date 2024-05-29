@@ -1,0 +1,55 @@
+class UberRide {
+    constructor(baseFare, costPerMile, costPerMinute, bookingFee) {
+        this.baseFare = baseFare;
+        this.costPerMile = costPerMile;
+        this.costPerMinute = costPerMinute;
+        this.bookingFee = bookingFee;
+    }
+
+    calculatePrice(distance, duration) {
+        const distanceCost = this.costPerMile * distance;
+        const timeCost = this.costPerMinute * duration;
+        const totalCost = this.baseFare + distanceCost + timeCost + this.bookingFee;
+        return totalCost;
+    }
+
+    setBaseFare(baseFare) {
+        this.baseFare = baseFare;
+    }
+
+    setCostPerMile(costPerMile) {
+        this.costPerMile = costPerMile;
+    }
+
+    setCostPerMinute(costPerMinute) {
+        this.costPerMinute = costPerMinute;
+    }
+
+    setBookingFee(bookingFee) {
+        this.bookingFee = bookingFee;
+    }
+}
+
+
+
+
+// Example usage:
+
+const uberRide = new UberRide(2.50, 1.20, 0.25, 2.00);
+
+const distance = 10; // in miles
+const duration = 15; // in minutes
+
+const price = uberRide.calculatePrice(distance, duration);
+console.log(`The total price of the Uber ride is: $${price.toFixed(2)}`);
+
+// Output: The total price of the Uber ride is: $19.00
+
+
+
+// Explanation:
+
+// The UberRide class has a constructor to initialize the fare components: baseFare, costPerMile, costPerMinute, and bookingFee.
+// The calculatePrice method calculates the total price based on the distance traveled (in miles) and the duration of the ride (in minutes).
+// Setter methods (setBaseFare, setCostPerMile, setCostPerMinute, setBookingFee) allow for updating the fare components.
+// The example usage demonstrates how to create an UberRide object and calculate the price of a ride based on given distance and duration.
